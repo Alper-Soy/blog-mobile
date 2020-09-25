@@ -5,7 +5,10 @@ const blogReducer = (state, action) => {
     case 'add_blogpost':
       return [
         ...state,
-        { title: `Blog Post #${state.length + action.payload}` },
+        {
+          id: Math.floor(Math.random() * 9999),
+          title: `Blog Post #${state.length + action.payload}`,
+        },
       ];
     default:
       return state;
